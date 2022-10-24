@@ -13,5 +13,6 @@ class Test extends Model
     public function test()
     {
         return 'hello';
+        // fiz update..;
     }
 }
