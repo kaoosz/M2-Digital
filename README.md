@@ -1,3 +1,40 @@
+composer..
+git clone ..
+
+composer install..
+cp .env.example .env
+php artisan key:generate
+
+change .env
+
+no meu caso porta 80 não está desponivel define 8088
+
+APP_PORT=8088
+
+DB_CONNECTION=pgsql
+DB_HOST=pgsql
+DB_PORT=5432
+DB_DATABASE=example_app
+DB_USERNAME=sail
+DB_PASSWORD=password
+
+depois de tudo configurado você usa comando abaixo ele ira subir a aplica se tiver tudo certo retorna aquilo..
+./vendor/bin/sail up -d
+
+[+] Running 3/3
+ ⠿ Network m2-digital_sail              Created                                                                                                    0.0s
+ ⠿ Container m2-digital-pgsql-1         Started                                                                                                    0.3s
+ ⠿ Container m2-digital-laravel.test-1  Started 
+
+depois que o docker criar o projeto e banco de dados..
+
+./vendor/bin/sail php artisan migrate
+
+irá criar as tabelas no banco e está tudo pronto para testar a API..
+
+
+Ultilizando a API
+
 
 
 endpoints
@@ -27,9 +64,12 @@ adiciona foto e delta isso
 
 Cidades
 
+
 http://127.0.0.1:8088/api/cidades
 
 http://127.0.0.1:8088/api/cidades?nome=BH&id=2
+![cidade_post](https://user-images.githubusercontent.com/39299613/197688972-4de6d04d-d295-4ff3-9d49-74f47747787d.png)
+
 
 CAMPANHA
 
