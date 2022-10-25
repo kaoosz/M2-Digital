@@ -1,13 +1,14 @@
 composer..
 git clone ..
 
-composer install..
-cp .env.example .env
-php artisan key:generate
+composer install.. /
+cp .env.example .env /
+php artisan key:generate /
 
-change .env
+mudar o banco no arquivo da raiz 
+.env //
 
-no meu caso porta 80 não está desponivel define 8088
+no meu caso porta 80 não está desponivel define a porta 8088
 
 APP_PORT=8088
 
