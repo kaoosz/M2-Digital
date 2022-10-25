@@ -8,7 +8,7 @@ php artisan key:generate /
 mudar o banco no arquivo da raiz 
 .env //
 
-no meu caso porta 80 não está desponivel define a porta 8088
+no meu caso a porta 80 não está desponivel define a porta 8088
 
 APP_PORT=8088
 
@@ -19,15 +19,19 @@ DB_DATABASE=example_app
 DB_USERNAME=sail
 DB_PASSWORD=password
 
-depois de tudo configurado você usa comando abaixo ele ira subir a aplica se tiver tudo certo retorna aquilo..
+depois de tudo configurado, você usa comando abaixo ele ira subir a aplicação, se tiver tudo certo retorna aquilo..
+
+comando
 ./vendor/bin/sail up -d
+
+retorno esperado na criação dos containers..
 
 [+] Running 3/3
  ⠿ Network m2-digital_sail              Created                                                                                                    0.0s
  ⠿ Container m2-digital-pgsql-1         Started                                                                                                    0.3s
  ⠿ Container m2-digital-laravel.test-1  Started 
 
-depois que o docker criar o projeto e banco de dados..
+depois que o docker criar o projeto e o banco de dados..
 
 ./vendor/bin/sail php artisan migrate
 
@@ -38,7 +42,7 @@ Ultilizando a API
 
 
 
-endpoints
+ENDPOINTS
 
 GET recupera Listar..
 
@@ -52,19 +56,17 @@ POST Cadastrar ..
 
 Grupo Cidades
 
-começamos por grupo cidades criamos um 'grupo de cidades' Primeiro,
-o segundo exemplo com parametro defenido
+começamos pelo 'Grupo Cidades' endpoint.
+o segundo exemplo está com parametro defenido
 
 http://127.0.0.1:8088/api/gruposcidade
 
 http://127.0.0.1:8088/api/gruposcidade?grupo_nomes=Grupo 4
 
 
-e depois começamos criando as Cidades que precisam estár dentro de um 'Grupo Cidade'
-adiciona foto e delta isso
+e depois começamos criando as 'Cidades' que precisam estár dentro de um 'Grupo Cidades'.
 
 Cidades
-
 
 http://127.0.0.1:8088/api/cidades
 
@@ -74,7 +76,7 @@ http://127.0.0.1:8088/api/cidades?nome=BH&id=2
 
 CAMPANHA
 
-campanha precisa do nome da campanha e grupo cidade que aquela campanha
+campanha precisa do nome da campanha e 'grupo_cidade_id' que aquela campanha
 pertence o segundo link com parametros..
 
 http://127.0.0.1:8088/api/campanhas
@@ -92,9 +94,11 @@ http://127.0.0.1:8088/api/produtos?nome=caqui&desconto=44
 
 PRODUTOS DA CAMPANHA
 
-depois que um produto for cadastrado ele podera ser adicionado a uma campanha.
-ele precisa do nome o id do produto e id da campanha para ser criado..
+depois que um 'Produto' for criado acima ele podera ser adicionado a uma campanha.
+ele precisa de um nome e id do produto e id da campanha para ser criado..
 o segundo exemplo tem três parametros..
+produto_id
+campanha_id
 
 http://127.0.0.1:8088/api/produtoscampanhas
 
