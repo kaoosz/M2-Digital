@@ -1,3 +1,10 @@
+<p align="center">
+  <br>
+  <img alt="TerraQ logo" width="150" src=![m2](https://user-images.githubusercontent.com/39299613/198827593-7b245fe6-6c67-4ce6-b105-c59705737908.jpeg)
+/>
+  <br>
+</p>
+
 composer..
 git clone ..
 
