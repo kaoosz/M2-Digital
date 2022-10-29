@@ -72,17 +72,16 @@ o segundo exemplo está com parametro defenido
 > `http://127.0.0.1:8088/api/gruposcidade?grupo_nomes=Grupo 4`
 
 
-e depois criamos as 'Cidades' que precisam estár dentro de um 'Grupo Cidades'.
-
 Cidades
 
+No endpoint e depois criamos as 'Cidades', que precisam estár dentro de um 'Grupo Cidades'.
 > `http://127.0.0.1:8088/api/cidades`
 
 > `http://127.0.0.1:8088/api/cidades?nome=BH&id=2`
 
 CAMPANHA
 
-campanha precisa do nome da campanha e 'grupo_cidade_id', que participara daquela campanha
+No endpoint 'Campanha' precisa do nome da campanha e 'grupo_cidade_id', que participara daquela campanha
 o segundo link com parametros..
 
 > `http://127.0.0.1:8088/api/campanhas`
@@ -91,7 +90,7 @@ o segundo link com parametros..
 
 PRODUTOS
 
-produtos precisam de nome do produto e o desconto um numero 'inteiro'
+No endpoint 'Produtos' precisam de nome do produto e o desconto um numero 'inteiro'
 o segundo exemplo com parametros.
 
 > `http://127.0.0.1:8088/api/produtos`
@@ -100,7 +99,7 @@ o segundo exemplo com parametros.
 
 PRODUTOS DA CAMPANHA
 
-depois que um 'Produto' for criado acima ele podera ser adicionado a uma campanha.
+No endpoint 'Produtos da Campanha' depois que um 'Produto' for criado acima ele podera ser adicionado a uma campanha.
 ele precisa de um 'nome','id do produto','id da campanha' para ser criado..
 o segundo exemplo tem três parametros..
 produto_id
@@ -116,10 +115,10 @@ PUT Editar..
 Cidades
 ## Put Editar (PUT)
 
-cidades o endpoint /1 ele ira pesquisar pela cidade id 1 para update.
+No endpoint 'Cidades' o endpoint /1 ele ira pesquisar pela cidade id 1 para update,
 você pode alterar a qual 'Grupo Cidades' aquela cidade pertence
 é opcional 'nome' e 'id' se quiser manter o nome e altera o id apenas
-voce só precisa fornecer o parametro id
+voce só precisa fornecer o parametro id.
 o segundo exemplo apenas muda o nome..
 
 > `http://127.0.0.1:8088/api/cidades/1`
@@ -131,7 +130,7 @@ o segundo exemplo apenas muda o nome..
 
 Grupo Cidades
 
-O 'Grupo Cidades' você pode apenas mudar o nome do grupo.
+No endpoint 'Grupo Cidades' você pode apenas mudar o nome do grupo.
 
 
 > `http://127.0.0.1:8088/api/gruposcidade/2`
@@ -139,11 +138,11 @@ O 'Grupo Cidades' você pode apenas mudar o nome do grupo.
 > `http://127.0.0.1:8088/api/gruposcidade/2?grupo_nomes=vale`
 
 
-Campanha    // parei aqui
+Campanha
 
-Na campanha você pode mudar qual 'Grupo de Cidades' e 'nome'
+No endpoint 'Campanha' você pode mudar qual 'Grupo de Cidades' e 'nome'
 estão participando daquela campanha
-segundo exemplo estamos mudando nome e grupo de cidades
+segundo exemplo estamos mudando nome e grupo de cidades.
 
 
 > `http://127.0.0.1:8088/api/campanhas/3`
@@ -152,7 +151,7 @@ segundo exemplo estamos mudando nome e grupo de cidades
 
 Produtos
 
-produtos você pode mudar o desconto ou o nome do produto
+No endpoint 'Produtos' você pode mudar o 'desconto' ou o 'nome' do produto
 
 > `http://127.0.0.1:8088/api/produtos/1`
 
@@ -161,7 +160,7 @@ produtos você pode mudar o desconto ou o nome do produto
 
 Produtos da Campanha
 
-você pode alterar a qual campanha os produtos da campanha está ligado
+No endpoint 'Produtos da Campanha' você pode alterar, a qual campanha os produtos da campanha está ligado.
 
 
 > `http://127.0.0.1:8088/api/produtoscampanhas/1`
@@ -171,7 +170,7 @@ você pode alterar a qual campanha os produtos da campanha está ligado
 
 Delete Excluir..
 
-ele automaticamente deleta a cidade..
+Nos endpoints 'Delete' ele automaticamente deleta a cidade..
 
 > `http://127.0.0.1:8088/api/cidades/1`  
 
