@@ -169,6 +169,7 @@ No endpoint 'Produtos da Campanha' você pode alterar, a qual campanha os produt
 
 
 Delete Excluir..
+## Delete Excluir (DELETE)
 
 Nos endpoints 'Delete' ele automaticamente deleta a cidade..
 
@@ -181,7 +182,3 @@ Nos endpoints 'Delete' ele automaticamente deleta a cidade..
 > `http://127.0.0.1:8088/api/produtos/3`  
 
 > `http://127.0.0.1:8088/api/produtoscampanhas/1`  
-
-
-
-
