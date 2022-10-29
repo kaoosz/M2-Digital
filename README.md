@@ -1,46 +1,48 @@
 <p align="center">
   <br>
-  <img alt="TerraQ logo" width="150" src=![m2](https://user-images.githubusercontent.com/39299613/198827593-7b245fe6-6c67-4ce6-b105-c59705737908.jpeg)
-/>
+  <img alt="m2 logo" width="100" src="https://media-exp1.licdn.com/dms/image/C4D0BAQHWSzDi11zMow/company-logo_200_200/0/1630935747067?e=1675296000&v=beta&t=bSW-tmbgzLag7bJ7m8pjYHU27gH0KJBdRNAv2bxGs9c"/>
   <br>
 </p>
 
-composer..
-git clone ..
 
-composer install.. /
-cp .env.example .env /
-php artisan key:generate /
 
-mudar o banco no arquivo da raiz 
-.env //
+# Instruções
 
-no meu caso a porta 80 não está desponivel define a porta 8088
+Após a cópia, clone o repositório localmente:
+```
+https://github.com/kaoosz/M2-Digital.git
+```
+Instale todas as dependências
+```
+composer install
+```
+crie um aquivo .env para configuaração
+```
+cp .env.example .env
+```
+gere uma chave unica indentificadora.
+```
+php artisan key:generate
+```
 
-APP_PORT=8088
+depois de tudo configurado no .env na raiz do projeto, é hora de subir o Docker com comando abaixo irá baixar os Containers necessarios.
 
-DB_CONNECTION=pgsql
-DB_HOST=pgsql
-DB_PORT=5432
-DB_DATABASE=example_app
-DB_USERNAME=sail
-DB_PASSWORD=password
-
-depois de tudo configurado, você usa comando abaixo ele ira subir a aplicação, se tiver tudo certo retorna aquilo..
-
-comando
+```
 ./vendor/bin/sail up -d
+```
 
 retorno esperado na criação dos containers..
-
+```
 [+] Running 3/3
  ⠿ Network m2-digital_sail              Created                                                                                                    0.0s
  ⠿ Container m2-digital-pgsql-1         Started                                                                                                    0.3s
  ⠿ Container m2-digital-laravel.test-1  Started 
-
+```
 depois que o docker criar o projeto e o banco de dados..
 
+```
 ./vendor/bin/sail php artisan migrate
+```
 
 irá criar as tabelas no banco e está tudo pronto para testar a API..
 
@@ -48,47 +50,45 @@ irá criar as tabelas no banco e está tudo pronto para testar a API..
 Ultilizando a API
 
 
+# Endpoints
 
-ENDPOINTS
+## BASE URL (GET)
+> `http://127.0.0.1:8088/api/cidades`
+> > `http://127.0.0.1:8088/api/gruposcidade`
+> > > `http://127.0.0.1:8088/api/campanhas`
+> > > > `http://127.0.0.1:8088/api/produtos`
+> > > > > `http://127.0.0.1:8088/api/produtoscampanhas`
 
-GET recupera Listar..
-
-http://127.0.0.1:8088/api/cidades
-http://127.0.0.1:8088/api/gruposcidade
-http://127.0.0.1:8088/api/campanhas
-http://127.0.0.1:8088/api/produtos
-http://127.0.0.1:8088/api/produtoscampanhas
-
-POST Cadastrar ..
+## Post Cadastrar (POST)
 
 Grupo Cidades
 
 começamos pelo 'Grupo Cidades' endpoint.
 o segundo exemplo está com parametro defenido
 
-http://127.0.0.1:8088/api/gruposcidade
+```
+> `http://127.0.0.1:8088/api/gruposcidade`
+```
 
-http://127.0.0.1:8088/api/gruposcidade?grupo_nomes=Grupo 4
+> `http://127.0.0.1:8088/api/gruposcidade?grupo_nomes=Grupo 4`
 
 
 e depois começamos criando as 'Cidades' que precisam estár dentro de um 'Grupo Cidades'.
 
 Cidades
 
-http://127.0.0.1:8088/api/cidades
+> `http://127.0.0.1:8088/api/cidades`
 
-http://127.0.0.1:8088/api/cidades?nome=BH&id=2
-![cidade_post](https://user-images.githubusercontent.com/39299613/197688972-4de6d04d-d295-4ff3-9d49-74f47747787d.png)
-
+`http://127.0.0.1:8088/api/cidades?nome=BH&id=2`
 
 CAMPANHA
 
 campanha precisa do nome da campanha e 'grupo_cidade_id' que aquela campanha
 pertence o segundo link com parametros..
 
-http://127.0.0.1:8088/api/campanhas
+> `http://127.0.0.1:8088/api/campanhas`
 
-http://127.0.0.1:8088/api/campanhas?campanha_nome=festasz&grupo_cidade_id=3
+> `http://127.0.0.1:8088/api/campanhas?campanha_nome=festasz&grupo_cidade_id=3`
 
 PRODUTOS
 
