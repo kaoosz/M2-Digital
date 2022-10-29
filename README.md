@@ -63,28 +63,27 @@ Ultilizando a API
 
 Grupo Cidades
 
-começamos pelo 'Grupo Cidades' endpoint.
+começamos pelo criando 'Grupo Cidades'.
 o segundo exemplo está com parametro defenido
 
 
 > `http://127.0.0.1:8088/api/gruposcidade`
 
-
 > `http://127.0.0.1:8088/api/gruposcidade?grupo_nomes=Grupo 4`
 
 
-e depois começamos criando as 'Cidades' que precisam estár dentro de um 'Grupo Cidades'.
+e depois criamos as 'Cidades' que precisam estár dentro de um 'Grupo Cidades'.
 
 Cidades
 
 > `http://127.0.0.1:8088/api/cidades`
 
-> ttp://127.0.0.1:8088/api/cidades?nome=BH&id=2`
+> `http://127.0.0.1:8088/api/cidades?nome=BH&id=2`
 
 CAMPANHA
 
-campanha precisa do nome da campanha e 'grupo_cidade_id' que aquela campanha
-pertence o segundo link com parametros..
+campanha precisa do nome da campanha e 'grupo_cidade_id', que participara daquela campanha
+o segundo link com parametros..
 
 > `http://127.0.0.1:8088/api/campanhas`
 
@@ -102,7 +101,7 @@ o segundo exemplo com parametros.
 PRODUTOS DA CAMPANHA
 
 depois que um 'Produto' for criado acima ele podera ser adicionado a uma campanha.
-ele precisa de um nome e id do produto e id da campanha para ser criado..
+ele precisa de um 'nome','id do produto','id da campanha' para ser criado..
 o segundo exemplo tem três parametros..
 produto_id
 campanha_id
@@ -111,14 +110,15 @@ campanha_id
 
 > `http://127.0.0.1:8088/api/produtoscampanhas?produto_id=2&campanha_id=2&produtos_campanha=outra`
 
-
+parei aqui
 PUT Editar..
 
 Cidades
+## Put Editar (PUT)
 
 cidades o endpoint /1 ele ira pesquisar pela cidade id 1 para update.
-você pode alterar a qual Grupo cidades aquela cidade pertence
-é opcional nome e id se quiser manter o nome e altera o id apenas
+você pode alterar a qual 'Grupo Cidades' aquela cidade pertence
+é opcional 'nome' e 'id' se quiser manter o nome e altera o id apenas
 voce só precisa fornecer o parametro id
 o segundo exemplo apenas muda o nome..
 
@@ -131,7 +131,7 @@ o segundo exemplo apenas muda o nome..
 
 Grupo Cidades
 
-grupo cidades você pode apenas mudar no nome do grupo.
+O 'Grupo Cidades' você pode apenas mudar o nome do grupo.
 
 
 > `http://127.0.0.1:8088/api/gruposcidade/2`
@@ -139,9 +139,9 @@ grupo cidades você pode apenas mudar no nome do grupo.
 > `http://127.0.0.1:8088/api/gruposcidade/2?grupo_nomes=vale`
 
 
-Campanha
+Campanha    // parei aqui
 
-campanha você pode mudar qual 'grupo de cidades' e nome
+Na campanha você pode mudar qual 'Grupo de Cidades' e 'nome'
 estão participando daquela campanha
 segundo exemplo estamos mudando nome e grupo de cidades
 
